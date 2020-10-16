@@ -1,0 +1,12 @@
+<%@page import="com.tecnara_enterprise.modelos.Login"%>
+<%@ page pageEncoding="UTF-8" %>
+
+<h2>
+    <% Login login = (Login)request.getSession().getAttribute("login"); %>
+    <% if(login !=null && login.isLoggedIn()){
+    %>
+    Hola, <%=login.getName() %>
+    <% }else{ %>
+    <a href="http://localhost:8080/tecnara_enterprise/login">login</a>
+    <%}%>
+</h2>   
